@@ -1,0 +1,29 @@
+def remove_duplicate_words(s):
+    temp = ""
+    x = 0
+    aList = []
+    final_str = ""
+    end = len(s) - 1 #last word
+    for i in s:
+      if i != " ":
+        temp = temp + i
+      if x == end or i == " ":
+        if temp in aList:
+          pass
+        else:
+            aList.append(temp)
+            final_str = final_str + temp + " "
+        temp = ""
+      x += 1
+    return final_str[:-1]
+    
+    ALT
+    
+    def remove_duplicate_words(s):
+    s = s.split(" ")
+    words = []
+    for item in s:
+        if item not in words:
+            words.append(item)
+    return " ".join(words)
+    
